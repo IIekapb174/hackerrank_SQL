@@ -235,12 +235,10 @@ GROUP BY COUNTRY.Continent
 ```   
 --------------------------------------------------------------------------------------------
 P(R) represents a pattern drawn by Julia in R rows. The following pattern represents P(5):
-
-* * * * * 
-* * * * 
-* * * 
-* * 
-*
+f f f f
+f f f
+f f
+f
 Write a query to print the pattern P(20).
 ```
 DECLARE @i INT = 20
@@ -267,11 +265,10 @@ SELECT CAST(ROUND(SUM(LAT_N),2) as decimal (10,2)), CAST(ROUND(SUM(LONG_W),2) as
 ```
 --------------------------------------------------------------------------------------------
 P(R) represents a pattern drawn by Julia in R rows. The following pattern represents P(5):
-*
-* * 
-* * * 
-* * * * 
-* * * * *
+f
+f f
+f f f
+f f f f
 Write a query to print the pattern P(20).
 ```
 DECLARE @i INT = 0
