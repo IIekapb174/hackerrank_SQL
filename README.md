@@ -314,6 +314,17 @@ FROM STATION
 WHERE LAT_N > 38.7780
 ```
 --------------------------------------------------------------------------------------------
+Query the Western Longitude (LONG_W)where the smallest Northern Latitude (LAT_N) in STATION is greater than . Round your answer to  decimal places.
+```
+SELECT CAST(LONG_W AS decimal (10,4))
+FROM STATION
+WHERE LAT_N = 
+    (
+        SELECT MIN(LAT_N)
+        FROM STATION
+        WHERE LAT_N > 38.7780
+    )
+```
 --------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------
