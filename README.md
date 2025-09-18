@@ -335,6 +335,25 @@ WHERE MONTHS*SALARY=
      FROM EMPLOYEE)
 ```
 --------------------------------------------------------------------------------------------
+Generate the following two result sets:
+
+Query an alphabetically ordered list of all names in OCCUPATIONS, immediately followed by the first letter of each profession as a parenthetical (i.e.: enclosed in parentheses). For example: AnActorName(A), ADoctorName(D), AProfessorName(P), and ASingerName(S).
+Query the number of ocurrences of each occupation in OCCUPATIONS. Sort the occurrences in ascending order, and output them in the following format:
+
+There are a total of [occupation_count] [occupation]s.
+where [occupation_count] is the number of occurrences of an occupation in OCCUPATIONS and [occupation] is the lowercase occupation name. If more than one Occupation has the same [occupation_count], they should be ordered alphabetically.
+
+```sql
+Select Name ||'('|| SUBSTR(o.occupation,1,1) ||')' as Result
+from OCCUPATIONS o
+ORDER BY o.Name ASC;
+
+
+Select 'There are a total of '|| COUNT(o.Name), LOWER(o.occupation) || 's.' AS Result
+from OCCUPATIONS o
+Group by o.occupation
+ORDER BY COUNT(o.Name), o.occupation ASC;
+```
 --------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------
